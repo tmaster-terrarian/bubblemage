@@ -1,4 +1,4 @@
-if(!global.clickToStart && (mouse_check_button_pressed(mb_left) || !IS_BROWSER))
+if(!global.clickToStart && (mouse_check_button_pressed(mb_left) || !BROWSER))
 {
     global.clickToStart = true;
     room = rmGame;
@@ -6,7 +6,7 @@ if(!global.clickToStart && (mouse_check_button_pressed(mb_left) || !IS_BROWSER))
     browser_input_capture(true);
 }
 
-if(!IS_BROWSER && keyboard_check_pressed(vk_f11))
+if(!BROWSER && keyboard_check_pressed(vk_f11))
 {
     window_set_fullscreen(!window_get_fullscreen());
 }

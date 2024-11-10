@@ -8,13 +8,15 @@ global.screenSize = 4;
 #macro INPUT_MOVEX_RAW clamp(((keyboard_check(ord("D")) + keyboard_check(vk_right)) - (keyboard_check(ord("A")) + keyboard_check(vk_left))) + (gamepad_axis_value(0, gp_axislh) * gamepad_is_connected(0)), -1, 1)
 #macro INPUT_MOVEY_RAW clamp(((keyboard_check(ord("S")) + keyboard_check(vk_down))  - (keyboard_check(ord("W")) + keyboard_check(vk_up)))   + (gamepad_axis_value(0, gp_axislv) * gamepad_is_connected(0)), -1, 1)
 
-global.settings_aimWithMouse = true;
+global.settings = {
+    // aimWithMouse: true
+};
 
 global.gamepadSupported = gamepad_is_supported();
 
-#macro IS_BROWSER (os_browser != browser_not_a_browser)
+#macro BROWSER (os_browser != browser_not_a_browser)
 
-if(!IS_BROWSER)
+if(!BROWSER)
 {
     window_enable_borderless_fullscreen(true);
 }

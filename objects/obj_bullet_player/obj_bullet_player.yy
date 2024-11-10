@@ -1,17 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"objPlayerBullet",
+  "%Name":"obj_bullet_player",
   "eventList":[],
   "managed":true,
-  "name":"objPlayerBullet",
+  "name":"obj_bullet_player",
   "overriddenProperties":[],
   "parent":{
     "name":"bullets",
     "path":"folders/Objects/bullets.yy",
   },
   "parentObjectId":{
-    "name":"parBullet",
-    "path":"objects/parBullet/parBullet.yy",
+    "name":"par_bullet",
+    "path":"objects/par_bullet/par_bullet.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

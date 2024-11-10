@@ -4,7 +4,7 @@ if((surface_get_width(application_surface) != SCREEN_WIDTH) || (surface_get_heig
 }
 
 // html target only
-if(IS_BROWSER && (browser_width > window_get_width()) || (browser_height > window_get_height()))
+if(BROWSER && (browser_width > window_get_width()) || (browser_height > window_get_height()))
 {
     global.screenSize = floor(browser_width / SCREEN_WIDTH);
 

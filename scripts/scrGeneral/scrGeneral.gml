@@ -4,10 +4,10 @@ function scrMove_Setup(_self)
 	_self._ry = 0;
 }
 
-function scrMove(_self, vx, vy)
+function scrMove(_self, _vx, _vy)
 {
-	_self._rx += vx;
-	_self._ry += vy;
+	_self._rx += _vx;
+	_self._ry += _vy;
 	var mx = round(_self._rx);
 	var my = round(_self._ry);
 	_self._rx -= mx;

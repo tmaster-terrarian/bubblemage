@@ -2,6 +2,7 @@
 #macro SCREEN_HEIGHT 180
 
 global.screenSize = 4;
+global.screenSizeOld = global.screenSize;
 
 #macro INPUT_SHOOT (keyboard_check(ord("Z")) || mouse_check_button(mb_left) || (gamepad_button_value(0, gp_shoulderrb) > 0.1) || (gamepad_button_value(0, gp_shoulderlb) > 0.1))
 
@@ -18,5 +19,9 @@ global.gamepadSupported = gamepad_is_supported();
 
 if(!BROWSER)
 {
-    window_enable_borderless_fullscreen(true);
+    if(os_type == os_windows)
+        window_enable_borderless_fullscreen(true);
+
+    global.screenPosXOld = window_get_x();
+    global.screenPosYOld = window_get_y();
 }

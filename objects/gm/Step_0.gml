@@ -3,12 +3,30 @@ if(!global.clickToStart && (mouse_check_button_pressed(mb_left) || !BROWSER))
     global.clickToStart = true;
     room = rmGame;
 
-    browser_input_capture(true);
+    if(BROWSER)
+        browser_input_capture(true);
 }
 
 if(!BROWSER && keyboard_check_pressed(vk_f11))
 {
-    window_set_fullscreen(!window_get_fullscreen());
+    if(window_get_fullscreen())
+    {
+        window_set_fullscreen(false);
+
+        window_set_position(max(0, global.screenPosXOld), max(0, global.screenPosYOld));
+
+        global.screenSize = global.screenSizeOld;
+    }
+    else
+    {
+        global.screenPosXOld = window_get_x();
+        global.screenPosYOld = window_get_y();
+
+        window_set_fullscreen(true);
+
+        global.screenSizeOld = global.screenSize;
+        global.screenSize = display_get_height() / SCREEN_HEIGHT;
+    }
 }
 
 if(!global.clickToStart)

@@ -1,0 +1,1 @@
+scrMove_Setup(self);

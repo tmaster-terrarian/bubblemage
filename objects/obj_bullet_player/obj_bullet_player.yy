@@ -1,10 +1,15 @@
 {
   "$GMObject":"",
   "%Name":"obj_bullet_player",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obj_bullet_player",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"par_bullet","path":"objects/par_bullet/par_bullet.yy",},"propertyId":{"name":"timeLeft","path":"objects/par_bullet/par_bullet.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"300",},
+  ],
   "parent":{
     "name":"bullets",
     "path":"folders/Objects/bullets.yy",
@@ -30,7 +35,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_bullet_player",
+    "path":"sprites/spr_bullet_player/spr_bullet_player.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

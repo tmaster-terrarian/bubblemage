@@ -25,3 +25,33 @@ if(!BROWSER)
     global.screenPosXOld = window_get_x();
     global.screenPosYOld = window_get_y();
 }
+
+enum TEAM
+{
+    NEUTRAL,
+    PLAYER,
+    ENEMY
+}
+
+global.bulletTypes = {
+    player: new BulletType(
+        obj_bullet_player,
+        1,
+        30,
+        TEAM.PLAYER
+    )
+}
+
+function BulletType(_obj_index, _damage, _castTime, _team = TEAM.NEUTRAL, _varsStruct = {}) constructor
+{
+    self.obj = _obj_index;
+    self.damage = _damage;
+    self.team = _team;
+    self.vars = _varsStruct;
+    self.castTime = _castTime
+
+    self.CreateInstance = function(_x, _y, _depth = 0)
+    {
+        return instance_create_depth(_x, _y, _depth, self.obj, self.vars)
+    }
+}

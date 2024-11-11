@@ -44,14 +44,15 @@ else
 
 if(sign(self.inputX) != 0 || sign(self.inputY) != 0)
 {
-    self.sprite_index = sprPlayerRun;
+    self.sprite_index = spr_player_run;
     self.image_index += _inputDist/5;
 }
 else
 {
-    self.sprite_index = sprPlayer;
+    self.sprite_index = spr_player;
     self.image_index = 0;
 }
+
 
 // aim
 
@@ -64,3 +65,16 @@ if(self.aimDirection < 90 || self.aimDirection > 270)
     self.facing = 1;
 else
     self.facing = -1;
+
+
+// shoot
+
+if(self.bulletCooldown > 0)
+    self.bulletCooldown--;
+if(self.bulletCooldown == 0 && INPUT_SHOOT)
+{
+    self.bulletCooldown = self.bulletType.castTime;
+
+    var _bullet = self.bulletType.CreateInstance(x, y, depth + 2);
+    _bullet.dir = self.aimDirection;
+}
